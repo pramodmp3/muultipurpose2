@@ -1,0 +1,758 @@
+/* --- General Reset and Body --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  /* Guarantees the page container cannot scroll horizontally */
+  overflow-x: hidden;
+  max-width: 100vw;
+
+  /* General Styles */
+  font-family: "Poppins", sans-serif;
+  background-color: #0f0f17;
+  color: #fff;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+
+/* --- Navbar & Utility --- */
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Navigation Bar Structure --- */
+.navbar-header {
+  width: 100%;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo Styling --- */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  color: #00e6e6;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.logo-image {
+  width: 150px;
+  height: 75px;
+  margin-right: 10px;
+  border-radius: 4px;
+  background-color: #1a1a1a;
+}
+
+.logo-text {
+  text-shadow: 0 0 5px rgba(0, 230, 230, 0.5);
+}
+
+/* --- Main Navigation Links (Desktop) --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: #00e6e6;
+  border-bottom: 2px solid #00e6e6;
+}
+
+.nav-link i {
+  font-size: 0.75em;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.has-dropdown:hover > .nav-link i,
+.has-dropdown.open > .nav-link i {
+  transform: rotate(180deg);
+}
+
+/* --- Dropdown Menu Styling (Desktop Hover) --- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2c2c2c;
+  min-width: 220px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  border: 1px solid #00e6e633;
+  border-top: 3px solid #00e6e6;
+  border-radius: 4px;
+  overflow: hidden;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  pointer-events: none;
+}
+
+.has-dropdown:hover > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-menu li a {
+  color: #dddddd;
+  padding: 10px 15px;
+  display: block;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #00e6e61a;
+  color: #ffffff;
+}
+
+/* --- Unique LOGIN Button --- */
+.login-btn,
+.shop-btn {
+  padding: 8px 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: linear-gradient(90deg, #00e6e6, #00b3b3);
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s ease, transform 0.1s;
+  box-shadow: 0 0 10px rgba(0, 230, 230, 0.6);
+  border-radius: 0 25px 0 25px;
+  -webkit-border-radius: 0 20px 0 20px;
+  -moz-border-radius: 0 25px 0 25px;
+  -ms-border-radius: 0 25px 0 25px;
+  -o-border-radius: 0 25px 0 25px;
+}
+
+.login-btn:hover,
+.shop-btn:hover {
+  box-shadow: 0 0 20px rgba(0, 230, 230, 0.8), 0 0 40px rgba(0, 230, 230, 0.4);
+  transform: translateY(-2px);
+}
+
+.login-btn:active .shop-btn:active {
+  transform: translateY(0);
+}
+
+/* --- Hamburger Menu (Mobile Only) --- */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-menu .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger-menu.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ======================================================= */
+/* --- 1. HERO & CONTENT BASE STYLES (MOBILE-FIRST) --- */
+/* CRITICAL: Enforce STACKING and CENTERING for all mobile views */
+/* ======================================================= */
+
+.hero-section {
+  display: flex;
+  padding: 50px 20px; /* Reduced mobile padding */
+  background: linear-gradient(90deg, #121212, #1e1e1e);
+  flex-wrap: wrap;
+  gap: 20px;
+
+  /* FIX: Force vertical stack and center content on mobile */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem; /* Reduced mobile font size */
+  color: #00e6e6;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease;
+}
+
+.hero-content p {
+  font-size: 1rem; /* Reduced mobile font size */
+  max-width: 600px;
+  animation: fadeIn 1.5s ease;
+  /* FIX: Ensures the paragraph block is centered within its container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 300px; /* Constrain image size on mobile */
+  border-radius: 10px;
+  animation: fadeInRight 1.5s ease;
+}
+
+/* --- Content Sections --- */
+.content-section {
+  padding: 40px 20px; /* Reduced mobile padding */
+  animation: fadeInUp 1s ease;
+}
+
+.section-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  /* FIX: Force vertical stack and center content on mobile */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 280px;
+  /* FIX: Ensure text block contents are centered */
+  text-align: center;
+}
+
+.image-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.image-content img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* DOs and DON'Ts Section */
+.dos-donts-row {
+  display: flex;
+  gap: 30px;
+  /* FIX: Force vertical stack on mobile */
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.dos,
+.donts {
+  flex: 1;
+  min-width: 250px;
+  background-color: #2c2c2c;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #00e6e6;
+  /* FIX: Ensure internal text is centered on mobile */
+  text-align: center;
+}
+
+/* Lists Styling FIX: Ensure lists are centered or consistently indented */
+.dos ul,
+.donts ul {
+  padding-left: 0;
+  text-align: left; /* Align list items left relative to the block */
+  display: inline-block; /* Allows the block to be centered by its parent's text-align */
+}
+.dos h3,
+.donts h3 {
+  margin-bottom: 15px;
+  color: #00e6e6;
+  text-align: center;
+}
+
+/* --- FOOTER STYLES --- */
+.footer {
+  background: linear-gradient(135deg, #0a0a0a, #1f1f1f);
+  color: #fff;
+  padding: 3rem 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* LOGO */
+.footer-logo img {
+  width: 150px;
+  height: 75px;
+  border-radius: 10px;
+}
+
+.footer-logo h2 {
+  color: #00e0ff;
+  margin-top: 0.5rem;
+}
+
+.footer-logo p {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  color: #bbb;
+}
+
+/* QUICK LINKS */
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3,
+.footer-newsletter h3 {
+  margin-bottom: 1rem;
+  color: #00e0ff;
+  font-size: 1.2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00e0ff;
+  transform: translateX(4px);
+  display: inline-block;
+}
+
+/* CONTACT */
+.footer-contact p {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 0.5rem;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.social-icons svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.social-icons svg path {
+  fill: #00e0ff !important;
+}
+
+/* Hover effect */
+.social-icons a:hover svg path {
+  fill: #007bff !important;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* NEWSLETTER */
+.footer-newsletter p {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 0.8rem;
+}
+
+.footer-newsletter form {
+  display: flex;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.footer-newsletter input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  background: #111;
+  color: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.footer-newsletter input:focus {
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.6);
+}
+
+.footer-newsletter button {
+  background: linear-gradient(135deg, #00e0ff, #007bff);
+  border: none;
+  border-radius: 0 25px 25px 0;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+}
+
+.footer-newsletter button:hover {
+  background: linear-gradient(135deg, #007bff, #00e0ff);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+#success-message {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #00e0ff;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ANIMATIONS */
+.footer-container > div {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.footer-container > div.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+/* --- 📱 Footer Mobile Center Alignment --- */
+@media (max-width: 768px) {
+  .footer-container {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .footer-logo,
+  .footer-links,
+  .footer-contact,
+  .footer-social,
+  .footer-newsletter {
+    text-align: center;
+  }
+
+  .footer-links ul,
+  .footer-contact p,
+  .footer-newsletter form {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-newsletter form {
+    flex-direction: column;
+  }
+
+  .footer-newsletter input,
+  .footer-newsletter button {
+    border-radius: 25px;
+    width: 100%;
+  }
+
+  .footer-newsletter button {
+    margin-top: 0.5rem;
+  }
+}
+/* ======================================================= */
+/* --- 2. MOBILE-FIRST BREAKPOINTS (min-width) --- */
+/* Switches to LEFT-ALIGNMENT and HORIZONTAL layouts */
+/* ======================================================= */
+
+/* --- 📐 1. SMALL DEVICES / LANDSCAPE PHONES (min-width: 576px) --- */
+@media (min-width: 576px) {
+  /* Slightly increase default padding for larger devices */
+  .hero-section,
+  .content-section {
+    padding: 60px 30px;
+  }
+}
+
+/* --- 💻 2. MEDIUM DEVICES / TABLETS (min-width: 768px) --- */
+@media (min-width: 768px) {
+  /* --- ALIGNMENT RESET (KEY FIX) --- */
+  /* Resets text alignment to left for all content blocks */
+  .hero-section,
+  .content-section {
+    align-items: flex-start; /* Reset section alignment to left */
+  }
+  .hero-content,
+  .text-content,
+  .image-content,
+  .dos,
+  .donts {
+    text-align: left; /* Ensure text is left-aligned in columns */
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hero-content p {
+    margin-left: 0;
+  }
+  .dos ul,
+  .donts ul {
+    display: block; /* No longer need inline-block trick */
+  }
+
+  /* --- CONTENT SECTIONS (Horizontal Flow) --- */
+  .section-row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Alternate section reversal */
+  .content-section.alternate .section-row {
+    flex-direction: row-reverse;
+  }
+
+  .text-content,
+  .image-content {
+    flex: 1 1 45%;
+  }
+
+  /* Do/Don't sections side-by-side */
+  .dos-donts-row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  /* --- HERO SECTION --- */
+  .hero-section {
+    flex-direction: column; /* Still stacked, but left aligned */
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+}
+
+/* --- 🖥️ 3. LARGE DEVICES / DESKTOPS (min-width: 992px) --- */
+@media (min-width: 992px) {
+  /* --- HERO SECTION (Side-by-Side) --- */
+  .hero-section {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 80px 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  /* --- FOOTER (Four-Column Layout) --- */
+  /* .footer-container {
+    grid-template-columns: repeat(4, 1fr);
+  } */
+}
+
+/* --- 📺 4. EXTRA LARGE DEVICES (min-width: 1200px) --- */
+@media (min-width: 1200px) {
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar-container {
+    padding: 1rem 1.5rem;
+  }
+
+  /* --- Hamburger Icon --- */
+  .hamburger-menu {
+    display: flex;
+  }
+  .hamburger-menu .bar {
+    background-color: #00e6e6;
+    transition: all 0.4s ease;
+  }
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* --- Full-screen overlay menu --- */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgba(20, 20, 20, 0.97);
+    backdrop-filter: blur(8px);
+    padding-top: 80px;
+    gap: 1rem;
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-link {
+    display: block;
+    font-size: 1.2rem;
+    padding: 12px 0;
+    width: 100%;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #00e6e6;
+  }
+
+  /* --- Dropdowns inside overlay --- */
+  /* --- Mobile Dropdown Overrides --- */
+  .dropdown-menu {
+    position: static; /* Stack within the parent */
+    background: none; /* Remove background from overlay */
+    box-shadow: none; /* Remove desktop shadow */
+    border: none;
+    padding-left: 20px; /* Indent dropdown items */
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+  }
+
+  .has-dropdown.open > .dropdown-menu {
+    max-height: 500px; /* Enough height for content */
+    opacity: 1;
+  }
+
+  .dropdown-menu li {
+    width: 100%;
+  }
+
+  .dropdown-menu li a {
+    padding: 10px 0; /* Vertical spacing */
+    display: block;
+    font-size: 1rem;
+    color: #ccc;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+  }
+
+  .dropdown-menu li a:hover {
+    color: #00e6e6;
+    padding-left: 25px; /* Slight slide effect on hover */
+  }
+
+  /* Buttons full width */
+  .shop-btn,
+  .login-btn {
+    width: 100%; /* Full width on mobile */
+    margin: 10px 0; /* Add spacing between buttons */
+    text-align: center; /* Center text inside button */
+  }
+
+  .login-item,
+  .shop-item {
+    width: 100%; /* Make parent list item full width */
+    border-bottom: none; /* Remove separator if needed */
+    padding: 0; /* Optional: reduce extra padding */
+  }
+}

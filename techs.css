@@ -1,0 +1,805 @@
+/* ------------------------------------- */
+/* 1. CUSTOM CSS VARIABLES & PALETTE */
+/* ------------------------------------- */
+/* ------------------- Light Theme (default) ------------------- */
+:root {
+  /* Backgrounds */
+  --bg-body: #f5f7fa; /* Light page background */
+  --bg-deep: #ffffff; /* Cards/sections */
+  --bg-card: #e1e8f0; /* Card background */
+  --bg-primary: rgba(255, 255, 255, 0.95); /* Navbar background */
+  --bg-secondary: #f0f4f8; /* Secondary sections */
+
+  /* Text Colors */
+  --text-color: #1e272e; /* General text */
+  --text-primary: #1e272e; /* Main text */
+  --text-secondary: #555e6b; /* Subtle text */
+  --text-light: #ffffff; /* Text for dark backgrounds */
+
+  /* Accent Colors */
+  --tech-blue: #007bff;
+  --tech-teal: #00bcd4;
+  --accent-teal: #00bcd4;
+  --accent-purple: #8a4dcf;
+
+  /* Gradients for buttons */
+  --grad-design: linear-gradient(135deg, #00bcd4, #007bff);
+  --grad-jtag: linear-gradient(135deg, #8a4dcf, #00bcd4);
+  --grad-argos: linear-gradient(135deg, #ff6f61, #ffd07a);
+  --accent-gradient: linear-gradient(90deg, #007bff, #00bcd4);
+
+  /* Shadows & Borders */
+  --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px rgba(0, 188, 212, 0.4);
+  --transition-speed: 0.4s;
+
+  --border-color: rgba(0, 123, 255, 0.15);
+  --border-color-light: rgba(0, 123, 255, 0.1);
+  --focus-glow: 0 0 0 0.25rem rgba(0, 188, 212, 0.3);
+}
+
+/* ------------------- Dark Theme Overrides ------------------- */
+body.dark-mode {
+  /* Backgrounds */
+  --bg-body: #13142a;
+  --bg-primary: rgba(30, 39, 46, 0.95);
+  --bg-deep: #1e1f3a;
+  --bg-card: #1f224a;
+  --bg-secondary: #2c3e50;
+
+  /* Text Colors */
+  --text-color: #f0f4f8;
+  --text-primary: #f0f4f8;
+  --text-secondary: #c0c6d0;
+  --text-light: #ffffff;
+
+  /* Accent Colors */
+  --tech-blue: #89cff0;
+  --tech-teal: #76e3ff;
+  --accent-teal: #00bcd4;
+  --accent-purple: #8a4dcf;
+  --accent-gradient: linear-gradient(90deg, #89cff0 0%, #76e3ff 100%);
+
+  /* Shadows & Borders */
+  --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(0, 188, 212, 0.8);
+  --border-color: rgba(137, 207, 240, 0.3);
+  --border-color-light: rgba(137, 207, 240, 0.15);
+  --focus-glow: 0 0 0 0.25rem rgba(137, 207, 240, 0.4);
+}
+
+/* ------------------------------------- */
+/* 2. BASE STYLES & TYPOGRAPHY */
+/* ------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+}
+/* navbar */
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color var(--transition-speed);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 15px auto;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-subtle);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-speed) ease;
+}
+
+.logo a {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--tech-blue);
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 150px;
+  height: 75px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.nav-item {
+  position: relative;
+  margin-left: 20px;
+}
+.nav-link {
+  display: block;
+  padding: 10px 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  color: var(--text-color);
+  transition: all var(--transition-speed) ease;
+}
+.nav-link:hover,
+.nav-item.has-dropdown:hover > .nav-link,
+.nav-item.has-dropdown:focus-within > .nav-link {
+  color: var(--text-light);
+  background: var(--accent-gradient);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+  transform: translateY(-2px);
+}
+.nav-link.dropdown-toggle::after {
+  content: "\25BC";
+  font-size: 0.6em;
+  margin-left: 6px;
+  transition: transform var(--transition-speed);
+  display: inline-block;
+}
+.nav-item.has-dropdown:hover > .nav-link.dropdown-toggle::after,
+.nav-item.has-dropdown:focus-within > .nav-link.dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 130%;
+  left: 0;
+  list-style: none;
+  background-color: var(--bg-secondary);
+  min-width: 180px;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: var(--shadow-subtle);
+  z-index: 1010;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.8);
+  transform-origin: top left;
+  transition: all 0.25s ease-out;
+}
+.nav-item.has-dropdown:hover > .dropdown-menu,
+.nav-item.has-dropdown:focus-within > .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  top: 100%;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-weight: 400;
+  transition: background-color var(--transition-speed);
+}
+.dropdown-menu a:hover {
+  background: var(--accent-gradient);
+  color: var(--text-light);
+}
+
+#theme-toggle {
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin-left: 20px;
+  color: var(--tech-blue);
+  padding: 5px;
+  border-radius: 50%;
+  transition: all var(--transition-speed);
+  line-height: 1;
+}
+#theme-toggle:hover {
+  transform: scale(1.1);
+  color: var(--tech-teal);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--tech-blue);
+  transition: all 0.4s ease-in-out;
+  border-radius: 2px;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-primary);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .nav-menu.active {
+    max-height: 500px;
+    border-top: 1px solid var(--border-color);
+    padding: 10px 0;
+  }
+  .nav-item {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .nav-item.has-dropdown > .dropdown-menu {
+    position: static;
+    transform: scale(1);
+    opacity: 1;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav-item.has-dropdown.dropdown-active > .dropdown-menu {
+    max-height: 300px;
+  }
+  .nav-link.dropdown-toggle::after {
+    float: right;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+.page-container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+h1 {
+  color: var(--accent-teal);
+  text-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+/* ------------------------------------- */
+/* 3. HERO SECTION */
+/* ------------------------------------- */
+.hero-section {
+  padding: 100px 20px 80px;
+  text-align: center;
+  background: var(--bg-deep);
+  border-bottom: 2px solid var(--accent-purple);
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  margin-bottom: 10px;
+  animation: textGlow 3s infinite alternate;
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 5px var(--accent-teal);
+  }
+  to {
+    text-shadow: 0 0 15px var(--accent-teal), 0 0 8px var(--accent-purple);
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ------------------------------------- */
+/* 4. PRODUCT SECTIONS */
+/* ------------------------------------- */
+.product-section {
+  padding: 100px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.product-section:nth-child(odd) {
+  background-color: var(--bg-deep);
+}
+
+.product-section:nth-child(even) {
+  background-color: var(--bg-card);
+}
+
+.product-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 0 20px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.9s, transform 0.9s;
+}
+
+.product-section:nth-child(odd) .product-content {
+  flex-direction: row-reverse;
+}
+
+.product-image-container {
+  flex: 1;
+  min-width: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--shadow-subtle);
+  transition: all var(--transition-speed);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  transition: transform var(--transition-speed);
+}
+
+.product-image-container:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-details {
+  flex: 1.5;
+  min-width: 300px;
+}
+
+.product-details h2 {
+  font-size: 2.5rem;
+}
+
+.product-details p {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* Feature List Pills */
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+  justify-content: center; /* Centers the items */
+}
+
+.feature-item {
+  flex: 1 1 calc(33.333% - 15px); /* 3 items per row */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 15px 20px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all var(--transition-speed);
+  box-sizing: border-box; /* Ensures padding doesn’t affect width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Icon alignment */
+.feature-item i {
+  margin-right: 8px;
+  color: var(--accent-teal);
+}
+
+/* ------------------------------------- */
+/* 5. PRODUCT SPECIFIC COLORS */
+/* ------------------------------------- */
+/* Design Lab */
+.product-design-lab h2 {
+  color: var(--accent-teal);
+}
+.product-design-lab .feature-item i {
+  color: var(--accent-teal);
+}
+.product-design-lab .feature-item {
+  border-color: var(--accent-teal);
+}
+
+/* JTAG */
+.product-jtag h2 {
+  color: var(--accent-purple);
+}
+.product-jtag .feature-item i {
+  color: var(--accent-purple);
+}
+.product-jtag .feature-item {
+  border-color: var(--accent-purple);
+}
+
+/* Argos */
+.product-argos h2 {
+  color: #ffd07a;
+}
+.product-argos .feature-item i {
+  color: #ff6f61;
+}
+.product-argos .feature-item {
+  border-color: #ff6f61;
+}
+
+/* ------------------------------------- */
+/* 6. CTA BUTTONS */
+/* ------------------------------------- */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  background: var(--grad-design);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-speed);
+  text-decoration: none;
+}
+
+.product-jtag .cta-button {
+  background: var(--grad-jtag);
+}
+
+.product-argos .cta-button {
+  background: var(--grad-argos);
+  color: var(--bg-deep);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-glow);
+  filter: brightness(1.1);
+}
+
+.cta-button i {
+  transition: transform var(--transition-speed);
+}
+
+.cta-button:hover i {
+  transform: translateX(5px);
+}
+/* ------------------------------------- */
+/* 5. footer  */
+/* ------------------------------------- */
+.footer {
+  /* Distinct Glassmorphism background that adapts to both themes */
+  background: var(--bg-secondary, rgba(30, 39, 46, 0.95));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  /* Stronger shadow for body separation */
+  box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.4);
+
+  /* Clear top border for extra separation */
+  border-top: 2px solid var(--border-color, rgba(137, 207, 240, 0.3));
+
+  /* Layout */
+  padding: 40px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: start;
+
+  /* Text styling (auto-adjusts with theme) */
+  color: var(--text-color, #f0f4f8);
+
+  /* Smooth transitions for theme toggle */
+  transition: all var(--transition-speed, 0.3s) ease;
+}
+
+/* Light Mode Override */
+body:not(.dark-mode) .footer {
+  background: rgba(255, 255, 255, 0.9); /* lighter footer in light mode */
+  color: #2c3e50; /* dark text for visibility */
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.15);
+  border-top: 2px solid rgba(0, 123, 255, 0.15);
+}
+
+/* Optional: Link styling */
+.footer a {
+  color: var(--tech-blue);
+  text-decoration: none;
+  transition: color var(--transition-speed, 0.3s);
+}
+
+.footer a:hover {
+  color: var(--tech-teal);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  color: var(--text-color-primary);
+}
+
+.footer-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--tech-blue);
+  transition: color var(--transition-speed);
+}
+
+/* Logo & Contact */
+.footer-logo-section .logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--tech-blue);
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.footer-logo-section .logo-text img {
+  width: 150px;
+  height: 75px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.contact-info p {
+  color: var(--text-color-secondary);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info p i {
+  margin-right: 10px;
+  color: var(--tech-teal);
+  font-size: 1.1em;
+}
+
+/* ------------------------------------- */
+/* 3. INTERACTIVE ELEMENTS (HOVER/FOCUS) */
+/* ------------------------------------- */
+/* Quick Links Hover */
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li a {
+  color: var(--text-color-secondary);
+  transition: all var(--transition-speed) ease;
+  display: inline-block;
+}
+
+.footer-links ul li a:hover {
+  color: var(--tech-blue);
+  transform: translateX(5px);
+  text-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* Social Icons Hover */
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+/* Social Icons Hover */
+.social-icons svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.social-icons a {
+  color: var(--tech-blue);
+  font-size: 1.5rem;
+  margin-right: 20px;
+  transition: all var(--transition-speed) ease;
+}
+
+.social-icons a:hover {
+  color: var(--tech-teal);
+  transform: scale(1.2) translateY(-3px);
+  filter: drop-shadow(0 0 8px rgba(0, 188, 212, 0.6));
+}
+
+/* Newsletter Input/Button */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color-light);
+  border-radius: 8px;
+  transition: all var(--transition-speed) ease;
+}
+
+/* Light Theme */
+body:not(.dark-mode) .newsletter-form input[type="email"] {
+  background-color: #b6cee6; /* soft gray-blue */
+  color: #2c3e50; /* dark readable text */
+}
+
+/* Dark Theme */
+body.dark-mode .newsletter-form input[type="email"] {
+  background-color: #ffffff; /* white input box */
+  color: #1e272e; /* dark text for contrast */
+}
+
+.newsletter-form input[type="email"]:focus {
+  border-color: var(--tech-blue);
+  box-shadow: var(--focus-glow);
+  outline: none;
+}
+
+.newsletter-form button {
+  background: var(--accent-gradient);
+  color: var(--text-light);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  transition: all var(--transition-speed) ease;
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+  filter: brightness(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--border-color-light);
+  font-size: 0.9rem;
+  color: var(--text-color-secondary);
+}
+
+/* ------------------------------------- */
+/* 7. MOBILE RESPONSIVENESS */
+/* ------------------------------------- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+  .footer-section {
+    width: 100%;
+    max-width: 400px;
+  }
+  .footer-logo-section .logo-text {
+    justify-content: center;
+  }
+  .contact-info p {
+    justify-content: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .newsletter-form {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .product-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .product-section:nth-child(odd) .product-content {
+    flex-direction: column;
+  }
+
+  .product-image-container {
+    min-width: 100%;
+    order: 1;
+  }
+
+  .product-details {
+    min-width: 100%;
+    order: 2;
+  }
+
+  .product-details h2 {
+    font-size: 2rem;
+  }
+
+  .feature-list {
+    justify-content: center;
+  }
+
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .feature-item {
+    flex: 1 1 calc(50% - 15px); /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .feature-item {
+    flex: 1 1 100%; /* 1 per row on mobile */
+  }
+}

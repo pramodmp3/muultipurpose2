@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./nav.css" />
+  </head>
+  <body>
+    <header class="navbar-header">
+      <nav class="navbar-container">
+        <!-- Company Logo -->
+        <div class="navbar-logo">
+          <img src="./assets/logo.png" alt="STACKLY Logo" class="logo-image" />
+          <!-- <span class="logo-text">STACKLY</span> -->
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+          <li class="nav-item has-dropdown">
+            <a href="./index.html" class="nav-link">
+              HOME1 <i class="fas fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./home2.html">Home 2</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-dropdown">
+            <a href="./solution.html" class="nav-link">
+              SOLUTIONS <i class="fas fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu solutions-menu">
+              <li><a href="./consumer.html">Consumer Electronics</a></li>
+              <li><a href="./medical.html">Medical Devices</a></li>
+              <li><a href="./tele.html">Telecommunication Equipment</a></li>
+              <li><a href="./indus.html">Industrial Electronics</a></li>
+              <li><a href="./semi.html">Semiconductor Devices</a></li>
+              <li><a href="./pcb.html">PCBs</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-dropdown">
+            <a href="./about.html" class="nav-link">
+              ABOUT <i class="fas fa-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./career.html">Careers</a></li>
+              <li><a href="./dash.html">Dashboard</a></li>
+              <li><a href="./privacy.html">Privacy Policy</a></li>
+              <li><a href="./ewaste.html">E-Waste Management</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="./ent.html" class="nav-link">ENTERTAINMENT</a>
+          </li>
+          <li class="nav-item">
+            <a href="./blog.html" class="nav-link">BLOG</a>
+          </li>
+          <li class="nav-item">
+            <a href="./faq.html" class="nav-link">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">CONTACT</a>
+          </li>
+
+          <li class="nav-item shop-item">
+            <a href="./shop.html"><button class="shop-btn">SHOP</button></a>
+          </li>
+          <li class="nav-item login-item">
+            <a href="./login.html"><button class="login-btn">LOGIN</button></a>
+          </li>
+        </ul>
+
+        <!-- Hamburger Icon for Mobile -->
+        <div class="hamburger-menu" aria-label="Toggle navigation menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </header>
+    <script src="./nav.js"></script>
+  </body>
+</html>

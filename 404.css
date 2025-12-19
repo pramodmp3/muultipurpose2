@@ -1,0 +1,128 @@
+/* Reset and body styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+/* Container */
+.error-container {
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Error number */
+.error-content h1 {
+  font-size: 8rem;
+  color: aqua;
+  margin-bottom: 10px;
+  animation: bounce 1s infinite;
+}
+
+/* Error message */
+.error-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.error-content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 25px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 25px 0 25px 0;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  -webkit-border-radius: 25px 0 25px 0;
+  -moz-border-radius: 25px 0 25px 0;
+  -ms-border-radius: 25px 0 25px 0;
+  -o-border-radius: 25px 0 25px 0;
+}
+
+.home-btn {
+  background: #2575fc;
+}
+
+.home-btn:hover {
+  background: #6a11cb;
+  transform: scale(1.05);
+}
+
+.services-btn {
+  background: #ff4b5c;
+}
+
+.services-btn:hover {
+  background: #ff758c;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 500px) {
+  .error-container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .error-content h1 {
+    font-size: 6rem;
+  }
+
+  .error-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JTAG | Electronics Testing Software</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="design.css" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar" aria-label="Main Navigation">
+        <div class="logo">
+          <a href="#">
+            <img src="./files/logo.webp" alt="JTAG Logo" />
+          </a>
+        </div>
+
+        <div
+          class="hamburger"
+          aria-controls="nav-menu"
+          aria-expanded="false"
+          id="hamburger"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item has-dropdown" tabindex="0">
+            <a
+              href="./home2.html"
+              class="nav-link dropdown-toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              >HOME2</a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="./index.html">HOME1</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-dropdown" tabindex="0">
+            <a
+              href="./techs.html"
+              class="nav-link dropdown-toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              >TECHSOFT</a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="./design.html">DESIGN</a></li>
+              <li><a href="./test.html">E-Testing</a></li>
+              <li><a href="./rpa.html">RPA</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="./app.html" class="nav-link">APPS</a>
+          </li>
+
+          <li class="nav-item has-dropdown" tabindex="0">
+            <a
+              href="./ops.html"
+              class="nav-link dropdown-toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              >OS</a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="./spos.html">SPOS</a></li>
+              <li><a href="./lpos.html">LPOS</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-dropdown" tabindex="0">
+            <a
+              href="./about2.html"
+              class="nav-link dropdown-toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              >ABOUT</a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="./about2.html">ABOUT US</a></li>
+              <li><a href="./members.html">TEAM</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="./blog2.html" class="nav-link">BLOG</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="./contact2.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+
+        <!-- DARK/LIGHT TOGGLE -->
+        <div
+          id="theme-toggle"
+          role="button"
+          aria-label="Toggle dark and light mode"
+        >
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-container">
+      <!-- HERO SECTION -->
+      <section class="hero-section" id="hero" data-scroll>
+        <div class="hero-content container">
+          <h1 class="hero-title">JTAG Electronics Testing</h1>
+          <p class="hero-subtitle">
+            Advanced Testing Software for Circuit Debugging and Board
+            Validation.
+          </p>
+
+          <div class="animated-mockup-area">
+            <!-- Tablet Mockup Placeholder -->
+            <div class="device-frame tablet-mockup">
+              <div class="device-screen">
+                <img
+                  src="./files/ts2.webp"
+                  alt="JTAG UI Mockup"
+                  class="ui-mockup tablet-ui"
+                />
+              </div>
+            </div>
+          </div>
+
+          <a href="./404.html" class="cta-scroll-btn"
+            >Explore Features <i class="fas fa-arrow-down"></i
+          ></a>
+        </div>
+      </section>
+
+      <!-- 1. FEATURES SECTION -->
+      <section class="features-section" id="features">
+        <h2 class="section-title" data-scroll>
+          Powerful Features for Precision Testing
+        </h2>
+        <div class="features-grid container">
+          <article class="feature-card" data-scroll>
+            <i class="fas fa-microchip feature-icon"></i>
+            <h3>Boundary Scan Testing</h3>
+            <p>
+              Efficiently test PCB connections using IEEE 1149.1 JTAG standards
+              to identify faults and ensure signal integrity.
+            </p>
+          </article>
+
+          <article class="feature-card" data-scroll>
+            <i class="fas fa-cogs feature-icon"></i>
+            <h3>Automated Test Scripts</h3>
+            <p>
+              Create and run automated scripts to quickly validate complex board
+              setups, reducing manual effort and errors.
+            </p>
+          </article>
+
+          <article class="feature-card" data-scroll>
+            <i class="fas fa-tachometer-alt feature-icon"></i>
+            <h3>Real-Time Diagnostics</h3>
+            <p>
+              Monitor boards in real-time, get immediate feedback on shorts,
+              opens, and signal anomalies during testing.
+            </p>
+          </article>
+
+          <!-- <article class="feature-card" data-scroll>
+            <i class="fas fa-shield-alt feature-icon"></i>
+            <h3>Comprehensive Reporting</h3>
+            <p>
+              Generate detailed test reports including pass/fail status,
+              coverage analysis, and historical trends for compliance.
+            </p>
+          </article> -->
+        </div>
+      </section>
+
+      <!-- 2. SHOWCASE SECTION -->
+      <section class="showcase-section" id="showcase">
+        <h2 class="section-title" data-scroll>Real-World JTAG Testing</h2>
+        <div class="showcase-grid container">
+          <div class="showcase-item" data-scroll>
+            <img
+              src="./files/t2.webp"
+              alt="Board Test Screenshot 1"
+              class="showcase-image"
+            />
+          </div>
+
+          <div class="showcase-item" data-scroll>
+            <img
+              src="./files/t3.webp"
+              alt="Board Test Screenshot 2"
+              class="showcase-image image-scale"
+            />
+          </div>
+
+          <div class="showcase-item" data-scroll>
+            <img
+              src="./files/t4.webp"
+              alt="Board Test Screenshot 3"
+              class="showcase-image image-slide-left"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. CTA SECTION -->
+      <section class="cta-section" id="cta">
+        <h2 class="cta-title" data-scroll>Start Testing with JTAG Today</h2>
+        <a href="./404.html" class="cta-button" data-scroll>
+          Try JTAG Free <i class="fas fa-arrow-right"></i>
+        </a>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section footer-logo-section">
+          <div class="logo-text">
+            <img src="./files/logo.webp" alt="JTAG Logo" />
+          </div>
+          <p>
+            Advanced electronics testing software providing reliable, accurate,
+            and fast diagnostics for modern circuit boards.
+          </p>
+        </div>
+
+        <div class="footer-section footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="./home2.html">HOME</a></li>
+            <li><a href="./techs.html">TECHSOFT</a></li>
+            <li><a href="./app.html">APPS</a></li>
+            <li><a href="./about2.html">ABOUT</a></li>
+            <li><a href="./blog2.html">BLOG</a></li>
+            <li><a href="./contact2.html">CONTACT</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section contact-info">
+          <h3>Contact Us</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Tech Avenue, Silicon
+            Valley, CA
+          </p>
+          <p><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</p>
+          <p><i class="fas fa-envelope"></i> info@stackly.com</p>
+          <div class="social-icons">
+            <a href="./404.html" aria-label="Facebook">
+              <svg
+                fill="#000000"
+                height="200px"
+                width="200px"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="-143 145 512 512"
+                xml:space="preserve"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M272.8,560.7 c-20.8,20.8-44.9,37.1-71.8,48.4c-27.8,11.8-57.4,17.7-88,17.7c-30.5,0-60.1-6-88-17.7c-26.9-11.4-51.1-27.7-71.8-48.4 c-20.8-20.8-37.1-44.9-48.4-71.8C-107,461.1-113,431.5-113,401s6-60.1,17.7-88c11.4-26.9,27.7-51.1,48.4-71.8 c20.9-20.8,45-37.1,71.9-48.5C52.9,181,82.5,175,113,175s60.1,6,88,17.7c26.9,11.4,51.1,27.7,71.8,48.4 c20.8,20.8,37.1,44.9,48.4,71.8c11.8,27.8,17.7,57.4,17.7,88c0,30.5-6,60.1-17.7,88C309.8,515.8,293.5,540,272.8,560.7z"
+                    ></path>
+                    <path
+                      d="M234.3,313.1c-10.2,6-21.4,10.4-33.4,12.8c-9.6-10.2-23.3-16.6-38.4-16.6c-29,0-52.6,23.6-52.6,52.6c0,4.1,0.4,8.1,1.4,12 c-43.7-2.2-82.5-23.1-108.4-55c-4.5,7.8-7.1,16.8-7.1,26.5c0,18.2,9.3,34.3,23.4,43.8c-8.6-0.3-16.7-2.7-23.8-6.6v0.6 c0,25.5,18.1,46.8,42.2,51.6c-4.4,1.2-9.1,1.9-13.9,1.9c-3.4,0-6.7-0.3-9.9-0.9c6.7,20.9,26.1,36.1,49.1,36.5 c-18,14.1-40.7,22.5-65.3,22.5c-4.2,0-8.4-0.2-12.6-0.7c23.3,14.9,50.9,23.6,80.6,23.6c96.8,0,149.7-80.2,149.7-149.7 c0-2.3,0-4.6-0.1-6.8c10.3-7.5,19.2-16.7,26.2-27.3c-9.4,4.2-19.6,7-30.2,8.3C222.1,335.7,230.4,325.4,234.3,313.1z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </a>
+            <a href="./404.html" aria-label="LinkedIn">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M6.5 8C7.32843 8 8 7.32843 8 6.5C8 5.67157 7.32843 5 6.5 5C5.67157 5 5 5.67157 5 6.5C5 7.32843 5.67157 8 6.5 8Z"
+                    fill="#0F0F0F"
+                  ></path>
+                  <path
+                    d="M5 10C5 9.44772 5.44772 9 6 9H7C7.55228 9 8 9.44771 8 10V18C8 18.5523 7.55228 19 7 19H6C5.44772 19 5 18.5523 5 18V10Z"
+                    fill="#0F0F0F"
+                  ></path>
+                  <path
+                    d="M11 19H12C12.5523 19 13 18.5523 13 18V13.5C13 12 16 11 16 13V18.0004C16 18.5527 16.4477 19 17 19H18C18.5523 19 19 18.5523 19 18V12C19 10 17.5 9 15.5 9C13.5 9 13 10.5 13 10.5V10C13 9.44771 12.5523 9 12 9H11C10.4477 9 10 9.44772 10 10V18C10 18.5523 10.4477 19 11 19Z"
+                    fill="#0F0F0F"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z"
+                    fill="#0F0F0F"
+                  ></path>
+                </g>
+              </svg>
+            </a>
+            <a href="./404.html" aria-label="Twitter">
+              <svg
+                fill="#000000"
+                viewBox="0 0 24 24"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <title>Instagram icon</title>
+                  <path
+                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                  ></path>
+                </g>
+              </svg>
+            </a>
+            <a href="./404.html" aria-label="Instagram">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H15V13.9999H17.0762C17.5066 13.9999 17.8887 13.7245 18.0249 13.3161L18.4679 11.9871C18.6298 11.5014 18.2683 10.9999 17.7564 10.9999H15V8.99992C15 8.49992 15.5 7.99992 16 7.99992H18C18.5523 7.99992 19 7.5522 19 6.99992V6.31393C19 5.99091 18.7937 5.7013 18.4813 5.61887C17.1705 5.27295 16 5.27295 16 5.27295C13.5 5.27295 12 6.99992 12 8.49992V10.9999H10C9.44772 10.9999 9 11.4476 9 11.9999V12.9999C9 13.5522 9.44771 13.9999 10 13.9999H12V21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z"
+                    fill="#0F0F0F"
+                  ></path>
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section newsletter">
+          <h3>Stay Updated</h3>
+          <p>
+            Subscribe to our newsletter for the latest electronics testing
+            insights and software updates.
+          </p>
+          <form
+            class="newsletter-form"
+            id="newsletter-form"
+            action="./404.html"
+          >
+            <label for="email-subscribe" class="sr-only">Email address</label>
+            <input
+              type="email"
+              id="email-subscribe"
+              placeholder="Enter your email"
+              required
+              aria-label="Email for newsletter subscription"
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">&copy; 2023 JTAG. All rights reserved.</div>
+    </footer>
+    <script src="./nav2.js"></script>
+    <script src="./footer2.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        document.querySelectorAll("[data-scroll]").forEach((element) => {
+          observer.observe(element);
+        });
+
+        const scrollBtn = document.querySelector(".cta-scroll-btn");
+        if (scrollBtn) {
+          scrollBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            document
+              .getElementById("features")
+              .scrollIntoView({ behavior: "smooth" });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

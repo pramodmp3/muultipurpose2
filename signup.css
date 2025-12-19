@@ -1,0 +1,216 @@
+/* --- Global Styles & Fonts --- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --dark-bg: #121212;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --accent-color: #00e6e6; /* Bright Cyan */
+  --accent-glow: rgba(0, 230, 230, 0.7);
+  --text-light: #f5f5f5;
+  --text-medium: #b0b0b0;
+  --error-color: #ff4d4d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Deep gradient background for modern look */
+  background: linear-gradient(135deg, #000000, #1a1a1a, #000000);
+  color: var(--text-light);
+  overflow: hidden; /* Prevent horizontal scroll from subtle background animation */
+}
+
+/* --- Signup Container & Card (Glassmorphism Effect) --- */
+.signup-container {
+  padding: 20px;
+  width: 100%;
+  max-width: 450px;
+  opacity: 0; /* Hidden initially, shown by JS */
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.signup-container.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.signup-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px;
+  /* Glassmorphism effect */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  text-align: center;
+}
+
+.logo-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.subtitle {
+  color: var(--text-medium);
+  margin-bottom: 30px;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* --- Input Fields & Focus Effect --- */
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: var(--text-medium);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid transparent; /* Base border */
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  /* Smooth input field focus effect (glowing border) */
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-glow);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Password Toggle Styling */
+.password-wrapper {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--text-medium);
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: var(--accent-color);
+}
+
+/* Validation Hints */
+.validation-hint {
+  font-size: 0.8rem;
+  color: var(--error-color);
+  margin-top: 5px;
+  text-align: left;
+  height: 1.2em; /* Reserve space to prevent layout shift */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.validation-hint.show {
+  opacity: 1;
+}
+
+/* --- Unique Signup Button --- */
+.signup-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  /* Unique button gradient */
+  background: linear-gradient(90deg, #00b3b3, #00e6e6);
+  color: var(--dark-bg);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 230, 230, 0.3);
+  margin-top: 15px; /* Space from last input */
+}
+
+/* Button hover animation (Subtle scale and intense glow) */
+.signup-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px rgba(0, 230, 230, 0.6), 0 0 50px rgba(0, 230, 230, 0.4);
+}
+
+.signup-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 230, 230, 0.3);
+}
+
+.footer-links {
+  margin-top: 25px;
+  font-size: 0.9rem;
+  color: var(--text-medium);
+}
+
+.footer-links a {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text-light);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 500px) {
+  .signup-card {
+    padding: 30px 20px;
+    margin: 0 10px;
+  }
+
+  .logo-text {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+
+  .signup-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}

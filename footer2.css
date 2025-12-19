@@ -1,0 +1,219 @@
+/* ------------------------------------- */
+/* 1. COLOR PALETTE & VARIABLES */
+/* ------------------------------------- */
+:root {
+  --bg-footer: rgba(255, 255, 255, 0.7); /* Light Glass base */
+  --bg-input: rgba(255, 255, 255, 0.9);
+  --text-color-primary: #2c3e50;
+  --text-color-secondary: #5a6a7a;
+  --tech-blue: #007bff;
+  --tech-teal: #00bcd4;
+  --accent-gradient: linear-gradient(90deg, #007bff 0%, #00bcd4 100%);
+  --shadow-footer: 0 -4px 15px rgba(0, 0, 0, 0.1);
+  --border-color-light: rgba(0, 123, 255, 0.2);
+  --transition-speed: 0.3s;
+  --focus-glow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+/* Dark Mode Support (requires 'dark-mode' class on the body) */
+body.dark-mode {
+  --bg-footer: rgba(30, 39, 46, 0.85); /* Dark Glass base */
+  --bg-input: rgba(44, 62, 80, 0.9);
+  --text-color-primary: #f0f4f8;
+  --text-color-secondary: #cbd5e0;
+  --tech-blue: #89cff0;
+  --tech-teal: #76e3ff;
+  --accent-gradient: linear-gradient(90deg, #89cff0 0%, #76e3ff 100%);
+  --shadow-footer: 0 -4px 15px rgba(0, 0, 0, 0.5);
+  --border-color-light: rgba(137, 207, 240, 0.3);
+  --focus-glow: 0 0 8px rgba(137, 207, 240, 0.6);
+}
+
+/* ------------------------------------- */
+/* 2. BASE STYLES & LAYOUT */
+/* ------------------------------------- */
+.footer {
+  /* Glassmorphism */
+  background: var(--bg-footer);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border-color-light);
+  box-shadow: var(--shadow-footer);
+  padding: 40px 20px;
+  margin-top: auto;
+  transition: all var(--transition-speed) ease;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  color: var(--text-color-primary);
+}
+
+.footer-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--tech-blue);
+  transition: color var(--transition-speed);
+}
+
+/* Logo & Contact */
+.footer-logo-section .logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--tech-blue);
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.footer-logo-section .logo-text img {
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.contact-info p {
+  color: var(--text-color-secondary);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info p i {
+  margin-right: 10px;
+  color: var(--tech-teal);
+  font-size: 1.1em;
+}
+
+/* ------------------------------------- */
+/* 3. INTERACTIVE ELEMENTS (HOVER/FOCUS) */
+/* ------------------------------------- */
+/* Quick Links Hover */
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li a {
+  color: var(--text-color-secondary);
+  transition: all var(--transition-speed) ease;
+  display: inline-block;
+}
+
+.footer-links ul li a:hover {
+  color: var(--tech-blue);
+  transform: translateX(5px);
+  text-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* Social Icons Hover */
+.social-icons {
+  display: flex;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: var(--tech-blue);
+  font-size: 1.5rem;
+  margin-right: 20px;
+  transition: all var(--transition-speed) ease;
+}
+
+.social-icons a:hover {
+  color: var(--tech-teal);
+  transform: scale(1.2) translateY(-3px);
+  filter: drop-shadow(0 0 8px rgba(0, 188, 212, 0.6));
+}
+
+/* Newsletter Input/Button */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color-light);
+  border-radius: 8px;
+  background-color: var(--bg-input);
+  color: var(--text-color-primary);
+  transition: all var(--transition-speed) ease;
+}
+
+.newsletter-form input[type="email"]:focus {
+  border-color: var(--tech-blue);
+  box-shadow: var(--focus-glow);
+}
+
+.newsletter-form button {
+  background: var(--accent-gradient);
+  color: var(--text-light);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  transition: all var(--transition-speed) ease;
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+  filter: brightness(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--border-color-light);
+  font-size: 0.9rem;
+  color: var(--text-color-secondary);
+}
+
+/* ------------------------------------- */
+/* 4. MOBILE RESPONSIVENESS */
+/* ------------------------------------- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-section {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .footer-logo-section .logo-text {
+    justify-content: center;
+  }
+
+  .contact-info p {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .newsletter-form {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

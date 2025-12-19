@@ -1,0 +1,880 @@
+/* Stackly Dark-Neon Consumer Electronics Page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+  overflow-x: hidden;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none; /* Removes link underlines */
+  color: inherit;
+}
+
+/* --- Navigation Bar Structure --- */
+.navbar-header {
+  width: 100%;
+  /* Dark background for a high-tech/futuristic look */
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo Styling --- */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  color: #00e6e6; /* Bright cyan accent color */
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.logo-image {
+  width: 150px;
+  height: 75px;
+  margin-right: 10px;
+  /* Simulate a high-tech logo border */
+  /* border: 2px solid #00e6e6; */
+  border-radius: 4px;
+  background-color: #1a1a1a;
+}
+
+.logo-text {
+  /* Small text glow effect */
+  text-shadow: 0 0 5px rgba(0, 230, 230, 0.5);
+}
+
+/* --- Main Navigation Links (Desktop) --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.4s ease; /* For mobile transition */
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+/* Hover/Active State */
+.nav-link:hover {
+  color: #00e6e6;
+  border-bottom: 2px solid #00e6e6;
+}
+
+/* Dropdown Arrow Icon Styling */
+.nav-link i {
+  font-size: 0.75em;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate icon when dropdown is open/hovered */
+.has-dropdown:hover > .nav-link i,
+.has-dropdown.open > .nav-link i {
+  /* .open class is used by JS for mobile */
+  transform: rotate(180deg);
+}
+
+/* --- Dropdown Menu Styling (Desktop Hover) --- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2c2c2c;
+  min-width: 220px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  border: 1px solid #00e6e633;
+  border-top: 3px solid #00e6e6; /* Strong accent line */
+  border-radius: 4px;
+  overflow: hidden;
+
+  /* Initial state for smooth fade/slide animation (Desktop) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  pointer-events: none;
+}
+
+/* Desktop: State when dropdown is visible on hover */
+.has-dropdown:hover > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-menu li a {
+  color: #dddddd;
+  padding: 10px 15px;
+  display: block;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #00e6e61a; /* Subtle accent background on hover */
+  color: #ffffff;
+}
+
+/* --- Unique LOGIN Button (Modified for diagonal curvature) --- */
+.login-btn,
+.shop-btn {
+  padding: 8px 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ffffff;
+  /*Cyan/TealGradient*/
+  background: linear-gradient(90deg, #00e6e6, #00b3b3);
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s ease, transform 0.1s;
+  /*Initialsubtleglow*/
+  box-shadow: 0 0 10px rgba(0, 230, 230, 0.6);
+  /*Newcustomborderradius:;
+  Top-Left(0),Top-Right(25px),Bottom-Right(0),Bottom-Left(25px)Thiscreatesthediagonalcurvylook.*/
+  border-radius: 0 25px 0 25px;
+  -webkit-border-radius: 0 20px 0 20px;
+  -moz-border-radius: 0 25px 0 25px;
+  -ms-border-radius: 0 25px 0 25px;
+  -o-border-radius: 0 25px 0 25px;
+}
+
+.login-btn:hover,
+.shop-btn:hover {
+  /* Enhanced glow and slight lift on hover */
+  box-shadow: 0 0 20px rgba(0, 230, 230, 0.8), 0 0 40px rgba(0, 230, 230, 0.4);
+  transform: translateY(-2px);
+}
+
+.login-btn:active .shop-btn:active {
+  transform: translateY(0);
+}
+
+/* --- Hamburger Menu (Mobile Only) --- */
+.hamburger-menu {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-menu .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger menu animation for 'X' icon (via JS class 'open') */
+.hamburger-menu.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger-menu.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* --- Responsive / Mobile Styles (Max-width 900px) --- */
+@media (max-width: 900px) {
+  .navbar-container {
+    padding: 1rem 1.5rem;
+  }
+
+  /* --- Hamburger Icon --- */
+  .hamburger-menu {
+    display: flex;
+  }
+  .hamburger-menu .bar {
+    background-color: #00e6e6;
+    transition: all 0.4s ease;
+  }
+  .hamburger-menu.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-menu.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* --- Full-screen overlay menu --- */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgba(20, 20, 20, 0.97);
+    backdrop-filter: blur(8px);
+    padding-top: 80px;
+    gap: 1rem;
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-link {
+    display: block;
+    font-size: 1.2rem;
+    padding: 12px 0;
+    width: 100%;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #00e6e6;
+  }
+
+  /* --- Dropdowns inside overlay --- */
+  /* --- Mobile Dropdown Overrides --- */
+  .dropdown-menu {
+    position: static; /* Stack within the parent */
+    background: none; /* Remove background from overlay */
+    box-shadow: none; /* Remove desktop shadow */
+    border: none;
+    padding-left: 20px; /* Indent dropdown items */
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+  }
+
+  .has-dropdown.open > .dropdown-menu {
+    max-height: 500px; /* Enough height for content */
+    opacity: 1;
+  }
+
+  .dropdown-menu li {
+    width: 100%;
+  }
+
+  .dropdown-menu li a {
+    padding: 10px 0; /* Vertical spacing */
+    display: block;
+    font-size: 1rem;
+    color: #ccc;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+  }
+
+  .dropdown-menu li a:hover {
+    color: #00e6e6;
+    padding-left: 25px; /* Slight slide effect on hover */
+  }
+
+  /* Buttons full width */
+  .shop-btn,
+  .login-btn {
+    width: 100%; /* Full width on mobile */
+    margin: 10px 0; /* Add spacing between buttons */
+    text-align: center; /* Center text inside button */
+  }
+
+  .login-item,
+  .shop-item {
+    width: 100%; /* Make parent list item full width */
+    border-bottom: none; /* Remove separator if needed */
+    padding: 0; /* Optional: reduce extra padding */
+  }
+}
+/* HERO */
+.ce-hero {
+  background: linear-gradient(135deg, #000, #1a1a2e);
+  text-align: center;
+  padding: 100px 20px;
+  box-shadow: inset 0 0 80px rgba(0, 255, 200, 0.1);
+}
+
+.ce-hero-content h1 {
+  font-size: 2.8rem;
+  color: #00ffc2;
+  text-shadow: 0 0 15px rgba(0, 255, 194, 0.7);
+}
+
+.ce-hero-content p {
+  color: #ccc;
+  max-width: 700px;
+  margin: 1rem auto 0;
+  font-size: 1.1rem;
+}
+
+/* INTRO */
+.ce-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.ce-intro,
+.ce-innovation,
+.intro-text,
+.innovation-text,
+.intro-image,
+.innovation-image {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.intro-text,
+.intro-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.intro-text h2 {
+  color: #00ffc2;
+  margin-bottom: 15px;
+}
+
+.intro-text p {
+  color: #bbb;
+  line-height: 1.7;
+}
+
+.intro-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgba(0, 255, 194, 0.25);
+}
+
+/* CAPABILITIES */
+.ce-capabilities {
+  background: #181828;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.ce-capabilities h2 {
+  color: #00ffc2;
+  margin-bottom: 50px;
+  text-shadow: 0 0 10px rgba(0, 255, 194, 0.4);
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.capability-card {
+  background: #22223a;
+  padding: 25px;
+  border-radius: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 194, 0.15);
+}
+
+.capability-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 35px rgba(0, 255, 194, 0.6);
+}
+
+.capability-card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 5px #00ffc2);
+}
+
+.capability-card h3 {
+  color: #00ffc2;
+  margin-bottom: 10px;
+}
+
+/* INNOVATION */
+.ce-innovation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 80px 10%;
+  flex-wrap: wrap;
+  background: #14141f;
+}
+
+.innovation-text,
+.innovation-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.innovation-text h2 {
+  color: #00ffc2;
+  margin-bottom: 15px;
+}
+
+.innovation-text p {
+  color: #bbb;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.innovation-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.innovation-text li {
+  margin-bottom: 10px;
+  color: #ccc;
+  padding-left: 20px;
+  position: relative;
+}
+
+.innovation-text li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #00ffc2;
+}
+
+.innovation-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0, 255, 194, 0.3);
+}
+
+/* SUSTAINABILITY */
+.ce-sustainability {
+  text-align: center;
+  padding: 100px 10%;
+  background: linear-gradient(135deg, #0a0a0a, #001f1f);
+}
+
+.ce-sustainability h2 {
+  color: #00ffc2;
+  margin-bottom: 15px;
+}
+
+.ce-sustainability p {
+  color: #bbb;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.sustainability-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 0 35px rgba(0, 255, 194, 0.25);
+}
+
+/* CTA */
+.ce-cta {
+  text-align: center;
+  background: linear-gradient(135deg, #002a2a, #000);
+  padding: 100px 20px;
+}
+
+.ce-cta h2 {
+  color: #00ffc2;
+  margin-bottom: 15px;
+}
+
+.ce-cta p {
+  color: #bbb;
+  margin-bottom: 25px;
+}
+
+.cta-btn {
+  background: linear-gradient(90deg, #00ffc2, #00bfa5);
+  padding: 12px 25px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 25px rgba(0, 255, 194, 0.4);
+}
+
+.cta-btn:hover {
+  box-shadow: 0 0 40px rgba(0, 255, 194, 0.8);
+  transform: translateY(-3px);
+}
+/* FOOTER BASE */
+.footer {
+  background: linear-gradient(135deg, #0a0a0a, #1f1f1f);
+  color: #fff;
+  padding: 3rem 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* LOGO */
+.footer-logo img {
+  width: 150px;
+  height: 75px;
+  border-radius: 10px;
+}
+
+.footer-logo h2 {
+  color: #00e0ff;
+  margin-top: 0.5rem;
+}
+
+.footer-logo p {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  color: #bbb;
+}
+
+/* QUICK LINKS */
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3,
+.footer-newsletter h3 {
+  margin-bottom: 1rem;
+  color: #00e0ff;
+  font-size: 1.2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00e0ff;
+  transform: translateX(4px);
+  display: inline-block;
+}
+
+/* CONTACT */
+.footer-contact p {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 0.5rem;
+}
+
+/* SOCIAL ICONS */
+/* Social Icons Layout */
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Ensure icons have visible size */
+.social-icons svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+/* Optional: make all icons uniform color (if you want them to match) */
+.social-icons svg path {
+  fill: #00e0ff !important;
+}
+
+/* Hover effect */
+.social-icons a:hover svg path {
+  fill: #007bff !important;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* NEWSLETTER */
+.footer-newsletter p {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 0.8rem;
+}
+
+.footer-newsletter form {
+  display: flex;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.footer-newsletter input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  background: #111;
+  color: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.footer-newsletter input:focus {
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.6);
+}
+
+.footer-newsletter button {
+  background: linear-gradient(135deg, #00e0ff, #007bff);
+  border: none;
+  border-radius: 0 25px 25px 0;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+}
+
+.footer-newsletter button:hover {
+  background: linear-gradient(135deg, #007bff, #00e0ff);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+#success-message {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #00e0ff;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ANIMATIONS */
+.footer-container > div {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.footer-container > div.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+/* --- 📱 Footer Mobile Center Alignment --- */
+@media (max-width: 768px) {
+  .footer-container {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .footer-logo,
+  .footer-links,
+  .footer-contact,
+  .footer-social,
+  .footer-newsletter {
+    text-align: center;
+  }
+
+  .footer-links ul,
+  .footer-contact p,
+  .footer-newsletter form {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-newsletter form {
+    flex-direction: column;
+  }
+
+  .footer-newsletter input,
+  .footer-newsletter button {
+    border-radius: 25px;
+    width: 100%;
+  }
+
+  .footer-newsletter button {
+    margin-top: 0.5rem;
+  }
+}
+
+/* RESPONSIVE */
+/* ------------------------------------- */
+/* 8. CORE CONTENT RESPONSIVENESS REVISION */
+/* ------------------------------------- */
+
+@media (max-width: 900px) {
+  /* === GENERAL & UTILITY REVISIONS === */
+  /* Set a standard, manageable padding for all sections */
+  .ce-hero,
+  .ce-intro,
+  .ce-capabilities,
+  .ce-innovation,
+  .ce-sustainability,
+  .ce-cta {
+    /* Use a standard side padding (e.g., 20px) instead of % */
+    padding: 50px 20px;
+  }
+
+  /* Ensure all structural elements scale down */
+  .ce-intro,
+  .ce-innovation {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px; /* Reduced gap for mobile */
+  }
+
+  /* Standard mobile text styling */
+  .intro-text p,
+  .innovation-text p,
+  .ce-sustainability p {
+    text-align: center; /* Center text when stacked */
+    max-width: 100%;
+  }
+
+  /* === HERO SECTION === */
+  .ce-hero-content h1 {
+    font-size: 2rem; /* Reduce font size */
+  }
+
+  /* === INTRO & INNOVATION SECTIONS === */
+  .intro-text,
+  .innovation-text {
+    order: 2; /* Text after image on mobile */
+    min-width: unset; /* Remove min-width constraint */
+  }
+
+  .intro-image,
+  .innovation-image {
+    order: 1;
+    width: 100%; /* Ensure image container fills the width */
+    max-width: 400px; /* Optional: cap size on tablets */
+    margin: 0 auto;
+  }
+
+  .intro-image img,
+  .innovation-image img {
+    /* Ensure the image itself never exceeds its container */
+    width: 100%;
+    height: auto;
+  }
+
+  /* Adjust list alignment for centered text */
+  .innovation-text ul {
+    display: inline-block; /* Allows the list block to center */
+    text-align: left;
+  }
+
+  /* === CAPABILITIES SECTION === */
+  .capabilities-grid {
+    /* The auto-fit, minmax(280px, 1fr) is good, but 280px might be too wide
+           for small screens. Let's adjust the minimum size. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .capability-card {
+    padding: 20px;
+  }
+
+  /* === SUSTAINABILITY SECTION === */
+  .sustainability-image img {
+    width: 100%;
+    max-width: 500px; /* Capped for aesthetics, but 100% width allows scaling */
+  }
+}
+
+/* Optional: Extra narrow screens (<480px) */
+@media (max-width: 480px) {
+  .ce-hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .ce-hero-content p {
+    font-size: 1rem;
+  }
+  .capabilities-grid {
+    /* Force single column if screens get very small, eliminating horizontal risk */
+    grid-template-columns: 1fr;
+  }
+}

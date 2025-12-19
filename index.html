@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STACKLY - Electronics & Entertainment Solutions</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a2d9d6c16b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-logo">
+        <img src="./assets/logo.webp" alt="STACKLY Logo" />
+      </div>
+      <div class="preloader-spinner"></div>
+    </div>
+    <header class="navbar-header">
+      <nav class="navbar-container">
+        <!-- Company Logo (Left Side) -->
+        <div class="navbar-logo">
+          <!-- Placeholder for STACKLY Logo -->
+          <img src="./assets/logo.webp" alt="STACKLY Logo" class="logo-image" />
+          <!-- <span class="logo-text">STACKLY</span> -->
+        </div>
+
+        <!-- Navigation Links (Right Side) -->
+        <ul class="nav-links">
+          <!-- HOME dropdown -->
+          <li class="nav-item has-dropdown">
+            <a href="./index.html" class="nav-link"
+              >HOME1 <i class="fas fa-chevron-down"></i
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="./home2.html">HOME2</a></li>
+            </ul>
+          </li>
+
+          <!-- SOLUTIONS dropdown (Manufacturing Categories) -->
+          <li class="nav-item has-dropdown">
+            <a href="./solution.html" class="nav-link"
+              >SOLUTIONS <i class="fas fa-chevron-down"></i
+            ></a>
+            <ul class="dropdown-menu solutions-menu">
+              <li><a href="./consumer.html">Consumer Electronics</a></li>
+              <li><a href="./medical.html">Medical Devices</a></li>
+              <li><a href="./tele.html">Telecommunication Equipment</a></li>
+              <li><a href="./indus.html">Industrial Electronics</a></li>
+              <li><a href="./semi.html">Semiconductor Devices</a></li>
+              <li><a href="./pcb.html">PCBs</a></li>
+            </ul>
+          </li>
+
+          <!-- ABOUT dropdown -->
+          <li class="nav-item has-dropdown">
+            <a href="./about.html" class="nav-link"
+              >ABOUT <i class="fas fa-chevron-down"></i
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="./about.html">About US</a></li>
+              <li><a href="./career.html">Careers</a></li>
+              <li><a href="./faq.html">FAQs</a></li>
+              <li><a href="./privacy.html">Privacy Policy</a></li>
+              <li><a href="./ewaste.html">E-Waste Management</a></li>
+            </ul>
+          </li>
+
+          <!-- NEW: ENTERTAINMENT single link -->
+          <li class="nav-item">
+            <a href="./ent.html" class="nav-link">ENTERTAINMENT</a>
+          </li>
+          <!-- blogpage -->
+          <li class="nav-item">
+            <a href="./blog.html" class="nav-link">BLOG</a>
+          </li>
+          <!-- faqpage -->
+          <li class="nav-item">
+            <a href="./dash.html" class="nav-link">DASHBOARD</a>
+          </li>
+          <!-- CONTACT single link -->
+          <li class="nav-item">
+            <a href="./contact.html" class="nav-link">CONTACT</a>
+          </li>
+
+          <!-- NEW BUTTON: SHOP -->
+          <li class="nav-item shop-item">
+            <a href="./shop.html"> <button class="shop-btn">SHOP</button></a>
+          </li>
+
+          <!-- LOGIN button -->
+          <li class="nav-item login-item">
+            <a href="./login.html"> <button class="login-btn">LOGIN</button></a>
+          </li>
+        </ul>
+
+        <!-- Hamburger Menu Icon for Mobile -->
+        <div class="hamburger-menu" aria-label="Toggle navigation menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-heading">
+          Innovating Electronics, Elevating Entertainment
+        </h1>
+        <p class="hero-subheading">
+          STACKLY delivers cutting-edge electronics and immersive entertainment
+          solutions for a smarter world.
+        </p>
+        <a href="./solution.html" class="cta-button">Explore Our Solutions</a>
+      </div>
+      <div class="hero-image-container">
+        <img src="assets/hero.webp" alt="Hero Image" />
+      </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section id="services" class="services-section container">
+      <h2 class="section-title">Our Core Solutions</h2>
+      <div class="solutions-grid">
+        <!-- Solution 1: Electronics Manufacturing (Original) -->
+        <div class="solution-block">
+          <div class="solution-block-img">
+            <!-- Icon for Manufacturing/Assembly -->
+            <svg
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              class="service-icon"
+            >
+              <!-- Path data from original, color adjusted via CSS stroke/fill -->
+              <path
+                d="M413.376,325.792V66.496c-0.008-6.232-5.048-11.28-11.28-11.296H48.912 c-6.224,0.016-11.264,5.072-11.272,11.296v259.296H413.376z"
+                style="fill: var(--color-accent)"
+              ></path>
+              <rect
+                y="325.8"
+                style="fill: var(--color-accent)"
+                width="450.96"
+                height="7.52"
+              ></rect>
+              <polygon
+                style="fill: var(--color-dark-bg)"
+                points="428.416,348.344 22.552,348.344 0,333.312 450.968,333.312"
+              ></polygon>
+              <path
+                d="M503.552,456.8H373.76c-4.664-0.016-8.432-3.784-8.448-8.448V189.176c0.008-4.664,3.784-8.44,8.448-8.456h129.792 c4.664,0.016,8.44,3.792,8.448,8.456v259.152C512,453,508.224,456.784,503.552,456.8z"
+                fill="#AAAAAA"
+              ></path>
+              <rect
+                x="372.84"
+                y="203.448"
+                style="fill: var(--color-accent)"
+                width="131.64"
+                height="223.312"
+              ></rect>
+            </svg>
+          </div>
+          <div class="solution-block-content">
+            <h4>Consumer Electronics</h4>
+            <p>
+              Innovative product design and precision assembly for high-quality,
+              market-ready consumer devices.
+            </p>
+            <a href="./consumer.html" class="cta-link">Explore Now</a>
+          </div>
+        </div>
+
+        <!-- Solution 2: Medical Devices (New) -->
+        <div class="solution-block">
+          <div class="solution-block-img">
+            <!-- Icon for Medical/Heartbeat -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--color-accent)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="service-icon"
+            >
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path>
+            </svg>
+          </div>
+          <div class="solution-block-content">
+            <h4>Medical Devices</h4>
+            <p>
+              Reliable, safe, and compliant manufacturing for medical-grade
+              components and diagnostic equipment.
+            </p>
+            <a href="./medical.html" class="cta-link">Explore Now</a>
+          </div>
+        </div>
+
+        <!-- Solution 3: Telecommunication (New) -->
+        <div class="solution-block">
+          <div class="solution-block-img">
+            <!-- Icon for Telecommunication/Signal -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--color-accent)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="service-icon"
+            >
+              <path d="M12 20a8 8 0 0 0 0-16M12 16a4 4 0 0 0 0-8"></path>
+              <line x1="12" y1="22" x2="12" y2="22"></line>
+            </svg>
+          </div>
+          <div class="solution-block-content">
+            <h4>Telecommunication & Networking</h4>
+            <p>
+              Building connectivity with high-performance components for
+              routers, amplifiers, and secure network devices.
+            </p>
+            <a href="./tele.html" class="cta-link">Explore Now</a>
+          </div>
+        </div>
+
+        <!-- Solution 4: Industrial Electronics (Original - Renamed/Simplified) -->
+        <div class="solution-block">
+          <div class="solution-block-img">
+            <!-- Icon for Industrial Automation/Gears -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--color-accent)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="service-icon"
+            >
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 7.37 20a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4 7.37a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1h.09a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+              ></path>
+            </svg>
+          </div>
+          <div class="solution-block-content">
+            <h4>Industrial Electronics</h4>
+            <p>
+              Durable, efficient systems for industrial automation, control
+              panels, and rigorous operating environments.
+            </p>
+            <a href="./indus.html" class="cta-link">Explore Now</a>
+          </div>
+        </div>
+
+        <!-- Solution 5: Semiconductor Devices (New) -->
+        <div class="solution-block">
+          <div class="solution-block-img">
+            <!-- Icon for Semiconductors/Chip -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--color-accent)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="service-icon"
+            >
+              <rect x="2" y="3" width="20" height="18" rx="2" ry="2"></rect>
+              <path d="M7 12h2M15 12h2M12 7v10"></path>
+            </svg>
+          </div>
+          <div class="solution-block-content">
+            <h4>Semiconductor Devices</h4>
+            <p>
+              Advanced chip design, testing, and fabrication solutions powering
+              the core of next-generation technology.
+            </p>
+            <a href="./semi.html" class="cta-link">Explore Now</a>
+          </div>
+        </div>
+
+        <!-- Solution 6: PCBs (New) -->
+        <div class="solution-block">
+          <div class="solution-block-img">
+            <!-- Icon for PCBs/Circuit -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--color-accent)"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="service-icon"
+            >
+              <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"></path>
+              <path d="M15 9l-6 6M9 9l6 6"></path>
+              <circle cx="9" cy="9" r="1"></circle>
+              <circle cx="15" cy="15" r="1"></circle>
+            </svg>
+          </div>
+          <div class="solution-block-content">
+            <h4>PCBs (Printed Circuit Boards)</h4>
+            <p>
+              High-quality multilayer PCB design and assembly ensuring
+              structural integrity and signal reliability.
+            </p>
+            <a href="./pcb.html" class="cta-link">Explore Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="entertainment" class="entertainment-section container">
+      <div class="entertainment-content-wrapper">
+        <h2 class="section-title">Our Entertainment Solutions</h2>
+        <p class="section-description">
+          Experience the future of audio and visual immersion. We design and
+          manufacture high-fidelity entertainment systems, seamless smart home
+          integrations, and immersive audio equipment for both residential and
+          commercial applications. Explore our commitment to unmatched quality
+          and cutting-edge technology that brings content to life.
+        </p>
+        <a href="./ent.html" class="cta-link explore-entertainment"
+          >Explore Now</a
+        >
+      </div>
+    </section>
+
+    <!-- Why STACKLY Section -->
+    <section class="why-section container">
+      <h2 class="section-title">Why STACKLY?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <svg
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+            fill="#000000"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M376.36,512H135.64c-8.632-0.04-15.616-7.04-15.64-15.672V15.672C120.024,7.04,127.008,0.04,135.64,0h240.72 c8.632,0.04,15.616,7.04,15.64,15.672v480.656C391.976,504.96,384.992,511.96,376.36,512z"
+              ></path>
+              <rect
+                x="133.928"
+                y="42.144"
+                style="fill: #1be1e4"
+                width="244.152"
+                height="414.168"
+              ></rect>
+              <g>
+                <circle
+                  style="fill: #666666"
+                  cx="268.6"
+                  cy="13.536"
+                  r="4.128"
+                ></circle>
+                <path
+                  style="fill: #666666"
+                  d="M294.896,32.64h-52.592c-1.712-0.008-3.088-1.384-3.096-3.096v-2.056 c0.008-1.712,1.384-3.088,3.096-3.096h52.592c1.712,0.008,3.088,1.384,3.096,3.096v2.064 C297.976,31.256,296.6,32.632,294.896,32.64z"
+                ></path>
+                <circle
+                  style="fill: #666666"
+                  cx="226.8"
+                  cy="28.52"
+                  r="4.128"
+                ></circle>
+              </g>
+              <g style="opacity: 0.15">
+                <polygon
+                  style="fill: #ffffff"
+                  points="133.928,215.32 133.928,42.144 339.68,42.144 "
+                ></polygon>
+              </g>
+              <circle
+                style="fill: #666666"
+                cx="256"
+                cy="484.16"
+                r="20.464"
+              ></circle>
+              <path
+                style="fill: #ffffff"
+                d="M256,493.904c-5.392,0-9.76-4.368-9.76-9.76s4.368-9.76,9.76-9.76s9.76,4.368,9.76,9.76 C265.752,489.536,261.392,493.896,256,493.904z M256,477.056c-3.912,0.008-7.088,3.184-7.08,7.096s3.184,7.088,7.096,7.08 s7.088-3.184,7.08-7.096S259.912,477.048,256,477.056L256,477.056z"
+              ></path>
+            </g>
+          </svg>
+          <h4>Innovative Technology</h4>
+          <p>Pushing the boundaries of electronics and entertainment design.</p>
+        </div>
+        <div class="why-card">
+          <svg
+            fill="#000000"
+            viewBox="0 0 24 24"
+            id="quality-5"
+            data-name="Flat Color"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon flat-color"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                id="secondary"
+                d="M21.94,17.89a1,1,0,0,1-.65.63l-2.71.8-1.69,2.27a1,1,0,0,1-.8.41h0a1,1,0,0,1-.81-.43l-2.88-4.11a1,1,0,0,1-.1-1,1,1,0,0,1,.75-.6,5.94,5.94,0,0,0,4.19-3,1,1,0,0,1,.82-.51,1,1,0,0,1,.87.43L21.82,17A1,1,0,0,1,21.94,17.89Zm-11-2a5.94,5.94,0,0,1-4.19-3,1,1,0,0,0-1.69-.08L2.18,17a1,1,0,0,0,.54,1.53l2.7.8,1.69,2.27a1,1,0,0,0,.8.41h0a1,1,0,0,0,.81-.43l2.88-4.11a1,1,0,0,0,.1-1A1,1,0,0,0,11,15.9Z"
+                style="fill: #2ca9bc"
+              ></path>
+              <circle
+                id="primary"
+                cx="12"
+                cy="10"
+                r="8"
+                style="fill: #000000"
+              ></circle>
+              <path
+                id="secondary-2"
+                data-name="secondary"
+                d="M11.33,12.5h0a1,1,0,0,1-.74-.34l-1.34-1.5a1,1,0,1,1,1.5-1.32l.58.65,1.92-2.15a1,1,0,0,1,1.5,1.32l-2.67,3A1,1,0,0,1,11.33,12.5Z"
+                style="fill: #2ca9bc"
+              ></path>
+            </g>
+          </svg>
+          <h4>Quality First</h4>
+          <p>Every product is rigorously tested for excellence.</p>
+        </div>
+        <div class="why-card">
+          <svg
+            fill="#3abbb9"
+            height="200px"
+            width="200px"
+            version="1.1"
+            id="Capa_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 477.655 477.655"
+            xml:space="preserve"
+            stroke="#3abbb9"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M440.367,440.415l-10.173-29.91c-19.102-56.262-70.83-94.605-129.763-97.121c-5.187,4.03-10.655,7.493-16.322,10.521 c-8.449,22.185-36.836,28.195-53.468,11.205c-19.676-1.738-37.69-9.511-53.422-21.725c-58.933,2.508-110.647,40.851-129.763,97.121 L37.3,440.415c-2.936,8.603-1.522,18.084,3.774,25.469c5.279,7.391,13.821,11.771,22.906,11.771h349.693 c9.083,0,17.626-4.379,22.906-11.771C441.873,458.499,443.286,449.018,440.367,440.415z"
+                ></path>
+                <path
+                  d="M277.758,290.619c34.212-24.047,58.141-77.151,58.141-128.491c0-145.907-194.133-145.752-194.133,0 c0,62.397,35.33,127.303,81.546,139.556c4.456-12.626,16.382-21.757,30.515-21.757C263.331,279.926,271.81,284.095,277.758,290.619 z"
+                ></path>
+                <path
+                  d="M99.169,223.042c4.813,18.906,31.044,13.704,31.044-3.805c0-70.178,3.354-76.731-6.041-84.348 C145.679,2.361,330.946,3.355,353.495,134.904c-9.381,7.641-6.025,14.163-6.025,84.333c0,5.489,2.95,10.095,7.189,12.952 c0,54.594-22.145,51.402-88.736,69.052c-10.295-11.174-28.683-3.899-28.683,11.173c0,18.876,27.053,23.293,32.302,4.318 c53.762-14.256,101.018-18.752,101.018-72.484v-11.027c3.991-2.066,6.817-5.729,7.951-10.179c51.822-1.056,51.838-78.719,0-79.775 c-1.072-4.24-3.711-7.703-7.423-9.815c1.336-15.902-1.94-36.805-11.057-56.985C296.626-54.368,109.355-3.176,106.422,123.622 c-0.404,4.294-0.078,7.338,0.17,9.83c-3.712,2.112-6.351,5.575-7.423,9.815c-21.71,0.419-39.212,18.084-39.212,39.888 C59.957,204.958,77.459,222.622,99.169,223.042z"
+                ></path>
+              </g>
+            </g>
+          </svg>
+          <h4>24/7 Support</h4>
+          <p>Reliable customer support whenever you need it.</p>
+        </div>
+        <div class="why-card">
+          <svg
+            height="200px"
+            width="200px"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+            fill="#000000"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <g transform="translate(0 1)">
+                <path
+                  style="fill: #00e1ff"
+                  d="M422.4,144.067c0-18.773-13.653-34.133-29.867-34.133h-107.52l-37.547-51.2H81.92 c-11.947,0-22.187,11.947-22.187,25.6v59.733H422.4z"
+                ></path>
+                <path
+                  style="fill: #ff8800"
+                  d="M426.667,109.933h-34.133c16.213,0,29.867,15.36,29.867,34.133h38.4 C460.8,125.293,445.44,109.933,426.667,109.933"
+                ></path>
+                <path
+                  style="fill: #ffffff"
+                  d="M81.92,58.733H59.733c-14.507,0-25.6,11.947-25.6,25.6v59.733h25.6V84.333 C59.733,70.68,69.973,58.733,81.92,58.733"
+                ></path>
+                <path
+                  style="fill: #ffe100"
+                  d="M34.133,169.667v256c0,14.507,10.24,25.6,23.04,25.6h397.653c12.8,0,23.04-11.093,23.04-25.6v-256 c0-14.507-10.24-25.6-23.04-25.6H57.173C44.373,144.067,34.133,156.013,34.133,169.667"
+                ></path>
+                <path
+                  style="fill: #ffffff"
+                  d="M34.133,425.667v-256c0-14.507,10.24-25.6,23.04-25.6h-23.04c-14.507,0-25.6,11.093-25.6,25.6v256 c0,14.507,11.093,25.6,25.6,25.6h23.04C44.373,451.267,34.133,440.173,34.133,425.667"
+                ></path>
+                <path
+                  style="fill: #00e1ff"
+                  d="M477.867,144.067h-23.04c12.8,0,23.04,11.093,23.04,25.6v256c0,14.507-10.24,25.6-23.04,25.6h23.04 c14.507,0,25.6-11.093,25.6-25.6v-256C503.467,156.013,492.373,144.067,477.867,144.067"
+                ></path>
+                <path
+                  d="M477.867,459.8H34.133C15.36,459.8,0,444.44,0,425.667v-51.2c0-5.12,3.413-8.533,8.533-8.533s8.533,3.413,8.533,8.533v51.2 c0,9.387,7.68,17.067,17.067,17.067h443.733c9.387,0,17.067-7.68,17.067-17.067v-256c0-9.387-7.68-17.067-17.067-17.067H34.133 c-9.387,0-17.067,7.68-17.067,17.067V306.2c0,5.12-3.413,8.533-8.533,8.533S0,311.32,0,306.2V169.667 c0-18.773,15.36-34.133,34.133-34.133h443.733c18.773,0,34.133,15.36,34.133,34.133v256C512,444.44,496.64,459.8,477.867,459.8z"
+                ></path>
+                <path
+                  d="M17.067,340.333c0-5.12-3.413-8.533-8.533-8.533S0,335.213,0,340.333c0,5.12,3.413,8.533,8.533,8.533 S17.067,345.453,17.067,340.333"
+                ></path>
+                <path
+                  style="fill: #63d3fd"
+                  d="M256,383L256,383c-14.507,0-25.6-11.093-25.6-25.6v-25.6h51.2v25.6 C281.6,371.907,270.507,383,256,383"
+                ></path>
+                <path
+                  d="M460.8,152.6H34.133c-5.12,0-8.533-3.413-8.533-8.533V84.333C25.6,65.56,40.96,50.2,59.733,50.2h187.733 c2.56,0,5.12,0.853,6.827,3.413L294.4,101.4h132.267c23.893,0,42.667,18.773,42.667,42.667 C469.333,149.187,465.92,152.6,460.8,152.6z M42.667,135.533H450.56c-3.413-10.24-12.8-17.067-23.893-17.067H290.133 c-2.56,0-5.12-0.853-6.827-3.413L243.2,67.267H59.733c-9.387,0-17.067,7.68-17.067,17.067V135.533z"
+                ></path>
+                <polygon
+                  points="256,220.867 273.067,220.867 273.067,203.8 256,203.8 "
+                ></polygon>
+                <polygon
+                  points="256,289.133 273.067,289.133 273.067,272.067 256,272.067 "
+                ></polygon>
+                <polygon
+                  points="238.933,306.2 256,306.2 256,289.133 238.933,289.133 "
+                ></polygon>
+                <polygon
+                  points="238.933,272.067 256,272.067 256,255 238.933,255 "
+                ></polygon>
+                <polygon
+                  points="256,255 273.067,255 273.067,237.933 256,237.933 "
+                ></polygon>
+                <polygon
+                  points="238.933,237.933 256,237.933 256,220.867 238.933,220.867 "
+                ></polygon>
+                <polygon
+                  points="256,186.733 273.067,186.733 273.067,169.667 256,169.667 "
+                ></polygon>
+                <polygon
+                  points="238.933,203.8 256,203.8 256,186.733 238.933,186.733 "
+                ></polygon>
+                <polygon
+                  points="238.933,169.667 256,169.667 256,152.6 238.933,152.6 "
+                ></polygon>
+                <polygon
+                  points="256,323.267 273.067,323.267 273.067,306.2 256,306.2 "
+                ></polygon>
+                <path
+                  d="M256,391.533c-18.773,0-34.133-15.36-34.133-34.133v-34.133h68.267V357.4C290.133,376.173,274.773,391.533,256,391.533z M238.933,340.333V357.4c0,9.387,7.68,17.067,17.067,17.067c9.387,0,17.067-7.68,17.067-17.067v-17.067H238.933z"
+                ></path>
+                <path
+                  d="M162.133,203.8h-102.4c-5.12,0-8.533-3.413-8.533-8.533c0-5.12,3.413-8.533,8.533-8.533h102.4 c5.12,0,8.533,3.413,8.533,8.533C170.667,200.387,167.253,203.8,162.133,203.8z"
+                ></path>
+                <path
+                  d="M162.133,237.933h-102.4c-5.12,0-8.533-3.413-8.533-8.533c0-5.12,3.413-8.533,8.533-8.533h102.4 c5.12,0,8.533,3.413,8.533,8.533C170.667,234.52,167.253,237.933,162.133,237.933z"
+                ></path>
+              </g>
+            </g>
+          </svg>
+          <h4>Sustainable Solutions</h4>
+          <p>Eco-friendly practices in every stage of production.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="logo-carousel-container">
+      <h2 class="logo-carousel-heading">Awards</h2>
+      <div class="logo-carousel-wrapper">
+        <div class="logo-carousel track">
+          <div class="logo-item">
+            <img src="./assets/aw1.webp" alt="Award 1" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw2.webp" alt="Award 2" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw3.webp" alt="Award 3" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw4.webp" alt="Award 4" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw5.webp" alt="Award 5" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw6.webp" alt="Award 6" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw7.webp" alt="Award 7" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw1.webp" alt="Award 8" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw2.webp" alt="Award 9" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw5.webp" alt="Award 10" />
+          </div>
+          <!-- Duplicate for infinite loop -->
+          <div class="logo-item">
+            <img src="./assets/aw1.webp" alt="Award 1" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw2.webp" alt="Award 2" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw3.webp" alt="Award 3" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw4.webp" alt="Award 4" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw5.webp" alt="Award 5" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw6.webp" alt="Award 6" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw7.webp" alt="Award 7" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw1.webp" alt="Award 8" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw2.webp" alt="Award 9" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/aw5.webp" alt="Award 10" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="logo-carousel-container">
+      <h2 class="logo-carousel-heading">Clients</h2>
+      <div class="logo-carousel-wrapper">
+        <div class="logo-carousel track">
+          <div class="logo-item">
+            <img src="./assets/cl1.webp" alt="Client 1" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl2.webp" alt="Client 2" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl3.webp" alt="Client 3" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl4.webp" alt="Client 4" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl5.webp" alt="Client 5" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl6.webp" alt="Client 6" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl7.webp" alt="Client 7" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl8.webp" alt="Client 8" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl9.webp" alt="Client 9" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl10.webp" alt="Client 10" />
+          </div>
+          <!-- Duplicate for infinite loop -->
+          <div class="logo-item">
+            <img src="./assets/cl1.webp" alt="Client 1" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl2.webp" alt="Client 2" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl3.webp" alt="Client 3" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl4.jpg" alt="Client 4" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl5.webp" alt="Client 5" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl6.webp" alt="Client 6" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl7.webp" alt="Client 7" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl8.webp" alt="Client 8" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl9.webp" alt="Client 9" />
+          </div>
+          <div class="logo-item">
+            <img src="./assets/cl10.webp" alt="Client 10" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- LOGO & BRAND -->
+        <div class="footer-logo">
+          <img src="./assets/logo.webp" alt="STACKLY Logo" />
+          <p>Innovating Tomorrow’s Electronics Today.</p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./solution.html">Solutions</a></li>
+            <li><a href="./ent.html">Entertainment</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./career.html">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>
+            <strong>Address:</strong> 123 Tech Park, Industrial Zone, Silicon
+            City
+          </p>
+          <p><strong>Email:</strong> info@stackly.com</p>
+          <p><strong>Phone:</strong> +1 (234) 567-890</p>
+        </div>
+
+        <!-- FOLLOW US + NEWSLETTER WRAPPER -->
+        <div class="footer-social-newsletter">
+          <!-- FOLLOW US -->
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="./404.html" aria-label="Facebook">
+                <svg
+                  fill="#fafafa"
+                  height="200px"
+                  width="200px"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="-143 145 512 512"
+                  xml:space="preserve"
+                  stroke="#fafafa"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <g>
+                      <path
+                        d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M272.8,560.7 c-20.8,20.8-44.9,37.1-71.8,48.4c-27.8,11.8-57.4,17.7-88,17.7c-30.5,0-60.1-6-88-17.7c-26.9-11.4-51.1-27.7-71.8-48.4 c-20.8-20.8-37.1-44.9-48.4-71.8C-107,461.1-113,431.5-113,401s6-60.1,17.7-88c11.4-26.9,27.7-51.1,48.4-71.8 c20.9-20.8,45-37.1,71.9-48.5C52.9,181,82.5,175,113,175s60.1,6,88,17.7c26.9,11.4,51.1,27.7,71.8,48.4 c20.8,20.8,37.1,44.9,48.4,71.8c11.8,27.8,17.7,57.4,17.7,88c0,30.5-6,60.1-17.7,88C309.8,515.8,293.5,540,272.8,560.7z"
+                      ></path>
+                      <path
+                        d="M234.3,313.1c-10.2,6-21.4,10.4-33.4,12.8c-9.6-10.2-23.3-16.6-38.4-16.6c-29,0-52.6,23.6-52.6,52.6c0,4.1,0.4,8.1,1.4,12 c-43.7-2.2-82.5-23.1-108.4-55c-4.5,7.8-7.1,16.8-7.1,26.5c0,18.2,9.3,34.3,23.4,43.8c-8.6-0.3-16.7-2.7-23.8-6.6v0.6 c0,25.5,18.1,46.8,42.2,51.6c-4.4,1.2-9.1,1.9-13.9,1.9c-3.4,0-6.7-0.3-9.9-0.9c6.7,20.9,26.1,36.1,49.1,36.5 c-18,14.1-40.7,22.5-65.3,22.5c-4.2,0-8.4-0.2-12.6-0.7c23.3,14.9,50.9,23.6,80.6,23.6c96.8,0,149.7-80.2,149.7-149.7 c0-2.3,0-4.6-0.1-6.8c10.3-7.5,19.2-16.7,26.2-27.3c-9.4,4.2-19.6,7-30.2,8.3C222.1,335.7,230.4,325.4,234.3,313.1z"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+              <a href="./404.html" aria-label="LinkedIn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M6.5 8C7.32843 8 8 7.32843 8 6.5C8 5.67157 7.32843 5 6.5 5C5.67157 5 5 5.67157 5 6.5C5 7.32843 5.67157 8 6.5 8Z"
+                      fill="#0F0F0F"
+                    ></path>
+                    <path
+                      d="M5 10C5 9.44772 5.44772 9 6 9H7C7.55228 9 8 9.44771 8 10V18C8 18.5523 7.55228 19 7 19H6C5.44772 19 5 18.5523 5 18V10Z"
+                      fill="#0F0F0F"
+                    ></path>
+                    <path
+                      d="M11 19H12C12.5523 19 13 18.5523 13 18V13.5C13 12 16 11 16 13V18.0004C16 18.5527 16.4477 19 17 19H18C18.5523 19 19 18.5523 19 18V12C19 10 17.5 9 15.5 9C13.5 9 13 10.5 13 10.5V10C13 9.44771 12.5523 9 12 9H11C10.4477 9 10 9.44772 10 10V18C10 18.5523 10.4477 19 11 19Z"
+                      fill="#0F0F0F"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z"
+                      fill="#0F0F0F"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+              <a href="./404.html" aria-label="Twitter">
+                <svg
+                  fill="#000000"
+                  viewBox="0 0 24 24"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <title>Instagram icon</title>
+                    <path
+                      d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+              <a href="./404.html" aria-label="Instagram">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H15V13.9999H17.0762C17.5066 13.9999 17.8887 13.7245 18.0249 13.3161L18.4679 11.9871C18.6298 11.5014 18.2683 10.9999 17.7564 10.9999H15V8.99992C15 8.49992 15.5 7.99992 16 7.99992H18C18.5523 7.99992 19 7.5522 19 6.99992V6.31393C19 5.99091 18.7937 5.7013 18.4813 5.61887C17.1705 5.27295 16 5.27295 16 5.27295C13.5 5.27295 12 6.99992 12 8.49992V10.9999H10C9.44772 10.9999 9 11.4476 9 11.9999V12.9999C9 13.5522 9.44771 13.9999 10 13.9999H12V21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z"
+                      fill="#0F0F0F"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- NEWSLETTER -->
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>Subscribe for updates and innovations</p>
+            <form id="newsletter-form" action="./404.html">
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </form>
+            <p id="success-message"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 STACKLY. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="style.js"></script>
+    <script src="./nav.js"></script>
+    <script src="./footer.js"></script>
+  </body>
+</html>

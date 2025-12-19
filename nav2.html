@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stackly Navbar</title>
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="nav2.css" />
+  </head>
+  <body>
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="header">
+      <nav class="navbar" aria-label="Main Navigation">
+        <div class="logo">
+          <a href="#">
+            <img src="logo.png" alt="Stackly Logo" />
+            Stackly
+          </a>
+        </div>
+
+        <div
+          class="hamburger"
+          aria-controls="nav-menu"
+          aria-expanded="false"
+          id="hamburger"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item has-dropdown" tabindex="0">
+            <a
+              href="./home2.html"
+              class="nav-link dropdown-toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              >HOME2</a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="./index.html">HOME1</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-dropdown" tabindex="0">
+            <a
+              href="./techs.html"
+              class="nav-link dropdown-toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              >TECHSOFT</a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="./design.html">Design</a></li>
+              <li><a href="./test.html">E-Testing</a></li>
+              <li><a href="./rpa.html">RPA</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="./app.html" class="nav-link">APPS</a>
+          </li>
+
+          <li class="nav-item has-dropdown" tabindex="0">
+            <a
+              href="./ops.html"
+              class="nav-link dropdown-toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              >OS</a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="./spos.html">SPOS</a></li>
+              <li><a href="./lpos.html">LPOS</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item has-dropdown" tabindex="0">
+            <a
+              href="./about2.html"
+              class="nav-link dropdown-toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              >ABOUT</a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="./about2.html">ABOUT US</a></li>
+              <li><a href="#">TEAM</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="./blog2.html" class="nav-link">BLOG</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="./contact2.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+
+        <!-- DARK/LIGHT TOGGLE -->
+        <div
+          id="theme-toggle"
+          role="button"
+          aria-label="Toggle dark and light mode"
+        >
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Navbar JS -->
+    <script src="nav2.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,672 @@
+/* ========== GLOBAL STYLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- CRITICAL GLOBAL OVERFLOW FIX --- */
+html,
+body {
+  /* Guarantees the page container cannot scroll horizontally */
+  overflow-x: hidden;
+  max-width: 100vw;
+
+  /* General Styles */
+  font-family: "Poppins", sans-serif;
+  background-color: #0f0f17;
+  color: #fff;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0f17;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+/* ========== HEADER ========== */
+
+/* --- Navigation Bar Structure --- */
+.navbar-header {
+  width: 100%;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo Styling --- */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  color: #00e6e6;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.logo-image {
+  width: 150px;
+  height: 75px;
+  margin-right: 10px;
+  border-radius: 4px;
+  background-color: #1a1a1a;
+}
+
+.logo-text {
+  text-shadow: 0 0 5px rgba(0, 230, 230, 0.5);
+}
+
+/* --- Main Navigation Links (Desktop) --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+/* Hover/Active State */
+.nav-link:hover {
+  color: #00e6e6;
+  border-bottom: 2px solid #00e6e6;
+}
+
+/* Dropdown Arrow Icon Styling */
+.nav-link i {
+  font-size: 0.75em;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate icon when dropdown is open/hovered */
+.has-dropdown:hover > .nav-link i,
+.has-dropdown.open > .nav-link i {
+  transform: rotate(180deg);
+}
+
+/* --- Dropdown Menu Styling (Desktop Hover) --- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2c2c2c;
+  min-width: 220px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  border: 1px solid #00e6e633;
+  border-top: 3px solid #00e6e6;
+  border-radius: 4px;
+  overflow: hidden;
+
+  /* Initial state for smooth fade/slide animation (Desktop) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  pointer-events: none;
+}
+
+/* Desktop: State when dropdown is visible on hover */
+.has-dropdown:hover > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-menu li a {
+  color: #dddddd;
+  padding: 10px 15px;
+  display: block;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #00e6e61a;
+  color: #ffffff;
+}
+
+/* --- Unique LOGIN Button --- */
+.login-btn,
+.shop-btn {
+  padding: 8px 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: linear-gradient(90deg, #00e6e6, #00b3b3);
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s ease, transform 0.1s;
+  box-shadow: 0 0 10px rgba(0, 230, 230, 0.6);
+  border-radius: 0 25px 0 25px;
+  -webkit-border-radius: 0 20px 0 20px;
+  -moz-border-radius: 0 25px 0 25px;
+  -ms-border-radius: 0 25px 0 25px;
+  -o-border-radius: 0 25px 0 25px;
+}
+
+.login-btn:hover,
+.shop-btn:hover {
+  box-shadow: 0 0 20px rgba(0, 230, 230, 0.8), 0 0 40px rgba(0, 230, 230, 0.4);
+  transform: translateY(-2px);
+}
+
+.login-btn:active .shop-btn:active {
+  transform: translateY(0);
+}
+
+/* --- Hamburger Menu (Mobile Only) --- */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-menu .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger menu animation for 'X' icon (via JS class 'open') */
+.hamburger-menu.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger-menu.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  text-align: center;
+  /* FIX: Replace percentage padding with safe pixel value on mobile */
+  padding: 6rem 20px 4rem;
+  background: radial-gradient(circle at 50% 20%, #00ffd55a, transparent 70%);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #00ffd5, #ff00d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s infinite alternate;
+}
+
+.hero p {
+  color: #ccc;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ========== BLOG GRID ========== */
+.blog-section {
+  /* FIX: Replace percentage padding with safe pixel value on mobile */
+  padding: 4rem 20px;
+  /* FIX: Explicitly set to 3 columns for desktop view */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  animation: fadeUp 1s ease-in-out;
+  display: grid; /* Ensure display: grid is present */
+}
+
+/* FIX: This redundant block is removed, as we define 3 columns above, 
+        and use media queries below to handle responsiveness.
+.blog-section {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+*/
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 255, 213, 0.2);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.blog-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 1.5rem;
+}
+
+.blog-content h3 {
+  color: #00ffd5;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.blog-content p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.read-more {
+  align-self: flex-start;
+  margin-top: auto;
+  display: inline-block;
+  font-weight: 600;
+  color: #00ffd5;
+  transition: 0.3s;
+}
+
+.read-more:hover {
+  color: #ff00d4;
+}
+
+/* FOOTER BASE */
+.footer {
+  background: linear-gradient(135deg, #0a0a0a, #1f1f1f);
+  color: #fff;
+  padding: 3rem 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* LOGO */
+.footer-logo img {
+  width: 150px;
+  height: 75px;
+  border-radius: 10px;
+}
+
+.footer-logo h2 {
+  color: #00e0ff;
+  margin-top: 0.5rem;
+}
+
+.footer-logo p {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  color: #bbb;
+}
+
+/* QUICK LINKS */
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3,
+.footer-newsletter h3 {
+  margin-bottom: 1rem;
+  color: #00e0ff;
+  font-size: 1.2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00e0ff;
+  transform: translateX(4px);
+  display: inline-block;
+}
+
+/* CONTACT */
+.footer-contact p {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 0.5rem;
+}
+
+/* SOCIAL ICONS */
+/* Social Icons Layout */
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Ensure icons have visible size */
+.social-icons svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+/* Optional: make all icons uniform color (if you want them to match) */
+.social-icons svg path {
+  fill: #00e0ff !important;
+}
+
+/* Hover effect */
+.social-icons a:hover svg path {
+  fill: #007bff !important;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* NEWSLETTER */
+.footer-newsletter p {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 0.8rem;
+}
+
+.footer-newsletter form {
+  display: flex;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.footer-newsletter input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  background: #111;
+  color: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.footer-newsletter input:focus {
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.6);
+}
+
+.footer-newsletter button {
+  background: linear-gradient(135deg, #00e0ff, #007bff);
+  border: none;
+  border-radius: 0 25px 25px 0;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+}
+
+.footer-newsletter button:hover {
+  background: linear-gradient(135deg, #007bff, #00e0ff);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+#success-message {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #00e0ff;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ANIMATIONS */
+.footer-container > div {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.footer-container > div.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+/* --- 📱 Footer Mobile Center Alignment --- */
+@media (max-width: 768px) {
+  .footer-container {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .footer-logo,
+  .footer-links,
+  .footer-contact,
+  .footer-social,
+  .footer-newsletter {
+    text-align: center;
+  }
+
+  .footer-links ul,
+  .footer-contact p,
+  .footer-newsletter form {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-newsletter form {
+    flex-direction: column;
+  }
+
+  .footer-newsletter input,
+  .footer-newsletter button {
+    border-radius: 25px;
+    width: 100%;
+  }
+
+  .footer-newsletter button {
+    margin-top: 0.5rem;
+  }
+}
+
+/* ========== RESPONSIVE NAVBAR & CONTENT FIXES (MAX-WIDTH 900px) ========== */
+/* ========== RESPONSIVE NAVBAR & CONTENT FIXES (MAX-WIDTH 900px) ========== */
+@media (max-width: 900px) {
+  /* --- NAV: General Adjustments --- */
+  .navbar-container {
+    padding: 1rem 1.5rem;
+  }
+
+  /* --- NAV: Hamburger Icon --- */
+  .hamburger-menu {
+    display: flex;
+  }
+  .hamburger-menu .bar {
+    background-color: #00e6e6;
+    transition: all 0.4s ease;
+  }
+
+  /* --- NAV: Full-screen overlay menu --- */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgba(20, 20, 20, 0.97);
+    backdrop-filter: blur(8px);
+    padding-top: 80px;
+    gap: 1rem;
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+  }
+
+  /* Ensure parent list item takes full width and centers main link text */
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+    padding: 12px 0;
+    width: 100%;
+  }
+
+  /* --- NAV: DROPDOWN ALIGNMENT FIX (PERFECT CENTERING) --- */
+  .dropdown-menu {
+    position: static; /* Stacks dropdown inline */
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    min-width: unset;
+
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: max-height 0.4s ease-in-out;
+    pointer-events: none;
+
+    /* FIX: Remove padding that was causing the indent/misalignment */
+    padding: 0;
+    /* FIX: Center the list items within the dropdown container */
+    text-align: center;
+  }
+
+  .nav-item.open > .dropdown-menu {
+    max-height: 500px;
+    pointer-events: auto;
+  }
+
+  .dropdown-menu li a {
+    /* Align text center for inner links */
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+
+    /* Override the old desktop hover left-slide transition to prevent text shift */
+    transition: color 0.3s ease;
+  }
+
+  /* Buttons full width in mobile menu */
+  .shop-btn,
+  .login-btn {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* --- CONTENT FIXES --- */
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* FIX: On screens 900px or less, the grid drops to 2 columns */
+  .blog-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Ultra-Narrow Screen Adjustments (MAX-WIDTH: 480px) */
+@media (max-width: 480px) {
+  .blog-section {
+    /* Force single column layout on the narrowest screens */
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
